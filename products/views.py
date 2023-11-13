@@ -36,6 +36,13 @@ def index(request):
 def signup(request):
     return render(request,"products/signup.html")
 
+#renders all suits
+def allsuits(request,):
+    products = Product.objects.all().order_by("id")
+    return render(request,"products/allsuits.html",{
+        "products":products,  
+    })
+
 productArr = ["suits","dresses","shirts","shoes"]
 def product_cat(request,product):
     if product in productArr:
@@ -44,7 +51,7 @@ def product_cat(request,product):
         return HttpResponse("The page you are looking for does not exsist")
 #class based view
 class ProductPageView(View):
-    def get(self,product_brand,product_slug):
+    def get(self,request,product_brand,product_slug):
         product = Product.objects.get(slug=product_slug)
         my_feedback = Feedback.objects.get(product=product,id = 2)
         form = FeedbackForm(instance=my_feedback)
@@ -55,7 +62,7 @@ class ProductPageView(View):
             "reviews":reviews,
         })
        
-    def post(self,product_brand,product_slug):
+    def post(self,request,product_brand,product_slug):
         product = Product.objects.get(slug=product_slug)
         my_feedback = Feedback.objects.get(product=product,id = 2)
         form = FeedbackForm(request.POST,instance=my_feedback)

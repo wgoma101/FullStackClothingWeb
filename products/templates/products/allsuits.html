@@ -10,25 +10,6 @@
 {%block body%}
 <!-- ***************** header ***************** -->
 {%include "includes/nav.html"%}
-
-<!-- ***************** main content ***************** -->
-<section id="intro">
-    <div style="width: 50%;">
-        <h1>Best Clothing Quality</h1>   
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis porro quam fugiat accusantium ab velit tenetur perspiciatis autem, ipsa obcaecati at blanditiis? Unde, consectetur itaque nemo modi consequuntur obcaecati accusantium?</p>
-        <a onclick="hideNav()">Become a member</a>
-    </div>
-
-    <video controls>
-        <source src="{% static 'products/vid/intro-video.mp4'%}">
-    </video>
-</section>
-
-<!-- ***************** Product card ***************** -->
-<div class="product-nav">
-    <h3>Suits</h3>
-    <a href="{% url 'allsuits' %}"">View all suits</a>
-</div>
 <main id="products-intro">
     {%for product in products%}
         <div class="product-card">
@@ -46,14 +27,5 @@
     {% endfor %}
 
 </main>
-<form>
-    <input placeholder="First name" id = "name">
-    <input placeholder="last name" id = "lastname">
-    <button type = "button" onclick="submitForm()">Submit</button>
-</form>
-<h2 id = displayTitle>this is my title</h2>
-<!-- ***************** Footer ***************** -->
-<footer>
-    <h2>This is my footer.</h2>
-</footer>
+<!-- ***************** main content ***************** -->
 {%endblock%}

@@ -6,5 +6,6 @@ urlpatterns = [
     path('',views.IndexView.as_view(),name="home"),#home page
     path('products/<product>',views.product_cat,name="productcat"),#product category
     path('signup',views.signup,name="signup"),#signup page
+    path('allsuits',views.allsuits,name="allsuits"),#all suits page
     path('products/<product_brand>/<product_slug>',views.ProductPageView.as_view(),name="product_page"),#product category
 ]
