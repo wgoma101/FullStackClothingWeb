@@ -1,0 +1,15 @@
+<!-- ***************** From template ***************** -->
+{% extends 'base.html' %}
+{%load static%}
+
+{%block description%}"This is my description"{%endblock%}
+{%block robots%}index, follow{%endblock%}
+{%block keywords %}modern black suit, myshop{%endblock%}
+{%block css %}{% static "products/style.css"%}{%endblock%}
+{%block title%}MyShop New{%endblock%}
+{%block body%}
+<!-- ***************** header ***************** -->
+{%include "includes/nav.html"%}
+
+<!-- ***************** main content ***************** -->
+{%endblock%}

@@ -36,6 +36,15 @@ def index(request):
 def signup(request):
     return render(request,"products/signup.html")
 
+def shop(request):
+    return render(request,"products/shop.html")
+
+def contact(request):
+    return render(request,"products/contact.html")
+
+def profile(request):
+    return render(request,"products/profile.html")
+
 #renders all suits
 def allsuits(request,):
     products = Product.objects.all().order_by("id")
